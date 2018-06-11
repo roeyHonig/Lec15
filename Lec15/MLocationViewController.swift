@@ -33,6 +33,7 @@ class MLocationViewController: UIViewController {
         if hasPermision() {
             let location = lm.requestLocation() // one location
             lm.startUpdatingLocation() // real time location
+            
         } else {
             // send the user to the settings
             guard let url = URL(string: UIApplicationOpenSettingsURLString) else {return}
@@ -70,6 +71,7 @@ extension MLocationViewController : CLLocationManagerDelegate {
     //
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("UPdate Location")
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
