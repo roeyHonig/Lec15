@@ -73,7 +73,14 @@ class MMapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            print("shake")
+            addAnnottionToTheMap()
+        }
+    }
+    
     
     func startUpdatingLocation() {
         // from where are we asking the location
@@ -86,6 +93,14 @@ class MMapViewController: UIViewController {
         lm.distanceFilter = kCLDistanceFilterNone
         lm.startUpdatingLocation()
     }
+    
+    func addAnnottionToTheMap() {
+        guard let location = lm.location else {return}
+        let coordinate = location.coordinate
+        let annotation = PizzaAnnotation(coordinate: coordinate, title: "Pizza", subtitle: "Hut")
+        mapView.addAnnotation(annotation)
+    }
+    
 }
 
 
@@ -104,6 +119,19 @@ extension MMapViewController : MKMapViewDelegate {
         // tap events on marker
         print("map is tapped")
     }
+    
+    
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if annotation is MKUserLocation {return nil} // don't change the user real time oin
+        
+        let pin = MKPinAnnotationView()
+        pin.pinTintColor = UIColor.blue
+        
+        return pin
+    }
 }
 
 extension MMapViewController : CLLocationManagerDelegate {
@@ -113,7 +141,7 @@ extension MMapViewController : CLLocationManagerDelegate {
         
         let loc = locations[0]
         //mapView.setCenter(loc.coordinate, animated: true)
-        let region = MKCoordinateRegionMakeWithDistance(loc.coordinate, 100, 100)
+        let region = MKCoordinateRegionMakeWithDistance(loc.coordinate, 300, 300)
         mapView.setRegion(region, animated: true)
     }
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6D276A1920CE885C009B6AF2 /* LocationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D276A1820CE885C009B6AF2 /* LocationUtil.swift */; };
 		6D276A1B20CE8DC7009B6AF2 /* HackeruRun.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6D276A1A20CE8DC7009B6AF2 /* HackeruRun.gpx */; };
+		6D276A1D20CE9C76009B6AF2 /* PizzaAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D276A1C20CE9C76009B6AF2 /* PizzaAnnotation.swift */; };
 		6DD1755120CE5164007812A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD1755020CE5164007812A9 /* AppDelegate.swift */; };
 		6DD1755320CE5164007812A9 /* MMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD1755220CE5164007812A9 /* MMapViewController.swift */; };
 		6DD1755520CE5164007812A9 /* MLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD1755420CE5164007812A9 /* MLocationViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		6D276A1820CE885C009B6AF2 /* LocationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtil.swift; sourceTree = "<group>"; };
 		6D276A1A20CE8DC7009B6AF2 /* HackeruRun.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HackeruRun.gpx; sourceTree = "<group>"; };
+		6D276A1C20CE9C76009B6AF2 /* PizzaAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaAnnotation.swift; sourceTree = "<group>"; };
 		6DD1754D20CE5164007812A9 /* Lec15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lec15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD1755020CE5164007812A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DD1755220CE5164007812A9 /* MMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMapViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				6DD1755E20CE5165007812A9 /* Info.plist */,
 				6D276A1820CE885C009B6AF2 /* LocationUtil.swift */,
 				6D276A1A20CE8DC7009B6AF2 /* HackeruRun.gpx */,
+				6D276A1C20CE9C76009B6AF2 /* PizzaAnnotation.swift */,
 			);
 			path = Lec15;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				6DD1755520CE5164007812A9 /* MLocationViewController.swift in Sources */,
 				6DD1755120CE5164007812A9 /* AppDelegate.swift in Sources */,
 				6DD1755320CE5164007812A9 /* MMapViewController.swift in Sources */,
+				6D276A1D20CE9C76009B6AF2 /* PizzaAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
