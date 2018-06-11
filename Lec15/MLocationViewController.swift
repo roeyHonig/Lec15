@@ -49,22 +49,7 @@ class MLocationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func hasPermision() -> Bool {
-        var permision = false
-        
-        if CLLocationManager.locationServicesEnabled() {  // chack that the GPS is on
-            let status = CLLocationManager.authorizationStatus()
-            
-            switch status{
-            case .authorizedAlways, .authorizedWhenInUse :
-                permision = true
-            default:
-                permision = false
-            }
-        }
-        
-        return permision
-    }
+    
 }
 
 extension MLocationViewController : CLLocationManagerDelegate {
