@@ -29,6 +29,17 @@ class MLocationViewController: UIViewController {
         
         lm.requestAlwaysAuthorization()
         lm.delegate = self
+        
+        if hasPermision() {
+            let location = lm.requestLocation() // one location
+            lm.startUpdatingLocation() // real time location
+        } else {
+            // send the user to the settings
+            guard let url = URL(string: UIApplicationOpenSettingsURLString) else {return}
+            // open the url
+            UIApplication.shared.open(url, options: [:])
+        
+        }
     
     }
 
@@ -44,7 +55,7 @@ class MLocationViewController: UIViewController {
             let status = CLLocationManager.authorizationStatus()
             
             switch status{
-                case .authorizedAlways, .authorizedWhenInUse
+            case .authorizedAlways, .authorizedWhenInUse :
                 permision = true
             default:
                 permision = false
