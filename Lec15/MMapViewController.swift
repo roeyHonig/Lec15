@@ -125,12 +125,26 @@ extension MMapViewController : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        if annotation is MKUserLocation {return nil} // don't change the user real time oin
+        if !(annotation is PizzaAnnotation) {
+            return nil // we only want to customize the pizza annotions
+            
+        }
         
-        let pin = MKPinAnnotationView()
-        pin.pinTintColor = UIColor.blue
+        var view = mapView.dequeueReusableAnnotationView(withIdentifier: "pizza")
+        // only if we don't have views yet , create them
+        if view == nil {
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: "pizza")
+            //view?.pinTintColor = UIColor.blue
+            view?.image = #imageLiteral(resourceName: "icons8-pizza")
+            view?.backgroundColor = UIColor.clear
+            view?.canShowCallout = true
+        }
         
-        return pin
+        
+        //let pin = MKPinAnnotationView()
+       // pin.pinTintColor = UIColor.blue
+        
+        return view
     }
 }
 
